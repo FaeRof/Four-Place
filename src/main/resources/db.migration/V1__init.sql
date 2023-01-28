@@ -1,4 +1,4 @@
-CREATE TYPE roles AS ENUM ('restaurant', 'user', 'admin');
+CREATE TYPE roles AS ENUM ('user', 'admin');
 
 CREATE TABLE IF NOT EXISTS "users"
 (
