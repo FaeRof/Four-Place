@@ -1,10 +1,13 @@
+CREATE TYPE roles AS ENUM ('restaurant', 'user', 'admin');
+
 CREATE TABLE IF NOT EXISTS "users"
 (
     "id"         SERIAL PRIMARY KEY NOT NULL,
-    "username"       varchar(100),
+    "username"   varchar(100),
     "surname"    varchar(100),
     "birth_date" date,
     "phone"      varchar(20),
     "email"      varchar(100),
-    "password"   varchar(30)
+    "password"   varchar(30),
+    "role"       roles
 );
