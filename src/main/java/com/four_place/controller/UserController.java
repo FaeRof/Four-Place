@@ -19,13 +19,13 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<UserDto> saveUser(@RequestBody UserDto user){
+    public ResponseEntity<UserDto> saveUser(@RequestBody UserDto user) {
         userService.save(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<List<UserDto>> getAllByUsername(@RequestParam("name") String name){
+    public ResponseEntity<List<UserDto>> getAllByUsername(@RequestParam("name") String name) {
         return new ResponseEntity<>(userService.getAllByName(name), HttpStatus.OK);
     }
 

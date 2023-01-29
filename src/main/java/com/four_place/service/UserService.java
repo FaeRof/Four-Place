@@ -7,7 +7,6 @@ import com.four_place.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -22,11 +21,10 @@ public class UserService {
     }
 
     public void save(UserDto userDto) {
-        UserEntity entity = userRepository.save(userMapper.toEntity(userDto));
-        userMapper.fromEntity(entity);
+        userRepository.save(userMapper.toEntity(userDto));
     }
 
-    public List<UserDto> getAllByName(String name){
+    public List<UserDto> getAllByName(String name) {
         List<UserEntity> entities = userRepository.getAllByUsername(name);
         return userMapper.listFromEntity(entities);
     }
